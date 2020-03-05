@@ -1,0 +1,62 @@
+<wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
+
+<view class="container">
+  <van-tabs bind:change="switchCate" active="{{tabIndex}}">
+    <van-tab title="直播">
+      <view class="noContent" wx:if="{{rooms.length == 0}}">
+        <van-icon name="bullhorn-o" size="120rpx" />
+        <view>没有更多直播啦～～</view>
+      </view>
+      <view class="live-container">
+        <view class="item" wx:for="{{rooms}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+          <navigator url="plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id={{item.roomid}}">
+            <view class="img-container">
+              <image class="img" src="{{item.anchorImg}}" mode="aspectFill"></image>
+              <view class="label">{{liveStatus[item.liveStatus]}}</view>
+            </view>
+          </navigator>
+            <view class="bottom">
+              <view class="text">
+                <navigator url="plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id={{item.roomid}}" class="header">
+                  <text class="name">{{item.name}}</text>
+                  <text wx:if="{{item.anchorName != ''}}" class="desc">主播：{{item.anchorName}}</text>
+                  <text class="desc">直播时间：{{dateUtil.dateFormat(item.startTime)}} - {{dateUtil.dateFormat(item.endTime)}}</text>
+                </navigator>
+                <view class="subscribe" wx:if="{{item.liveStatus == 102}}">
+                  <subscribe room-id="{{item.roomid}}"></subscribe>
+                </view>
+              </view>
+            </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="已结束">
+      <view class="finished-live-container">
+        <view class="item" wx:for="{{finishedRooms}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+            <image class="img" src="{{item.anchorImg}}" mode="aspectFit" background-size="cover"></image>
+            <view class="right">
+              <navigator url="plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id={{item.roomid}}">
+                <view class="text">
+                  <text class="name">{{item.name}}</text>
+                  <text wx:if="{{item.anchorName != ''}}" class="desc">主播：{{item.anchorName}}</text>
+                  <text class="desc">直播时间：{{dateUtil.dateFormat(item.startTime)}} - {{dateUtil.dateFormat(item.endTime)}}</text>
+                </view>
+              </navigator>
+              <view class="opration" wx:if="{{item.liveRoomReplyList.length > 0}}">
+                <van-button type="info" size="small" data-room="{{item}}" bind:click="showHistoryPopup">观看回放</van-button>
+              </view>
+            </view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+  <van-popup show="{{ historyShow }}" bind:close="onClose">
+    <video src="{{liveHistoryRoom.mediaUrl}}"></video>
+  </van-popup>
+
+  <!-- 联系客服 -->
+  <view class="contact">
+    <contact-button style="opacity:0;position:absolute;" type="default-dark" session-from="weapp" size="27">
+    </contact-button>
+  </view>
+</view>

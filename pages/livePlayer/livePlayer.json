@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "直播演示",
+  "usingComponents": {
+    "van-tab": "../../lib/tab/index",
+    "van-tabs": "../../lib/tabs/index",
+    "van-card": "../../lib/card/index",
+    "van-button": "../../lib/button/index",
+    "subscribe": "plugin-private://wx2b03c6e691cd7370/components/subscribe/subscribe",
+    "van-icon": "../../lib/icon/index",
+    "van-popup": "../../lib/popup/index"
+  }
+}

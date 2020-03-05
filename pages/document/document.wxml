@@ -1,0 +1,3 @@
+<view class="container">
+  <web-view src="https://docs.firefac.cn/start/" />
+</view>

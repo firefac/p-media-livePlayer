@@ -1,0 +1,173 @@
+.container {
+  background: #fff;
+}
+
+view, text {
+  font-family: PingFangSC-Light, helvetica, 'Heiti SC';
+  font-size: 29rpx;
+}
+
+.finished-live-container{
+  justify-content: space-between;  
+  flex-wrap:wrap;
+  box-sizing: content-box;
+  background: #fff;
+  width: 100%;
+}
+.finished-live-container .item {
+  border-bottom: 1px solid #d9d9d9;
+  margin: 0 20rpx;
+  height: 264rpx;
+}
+
+.finished-live-container .img {
+  margin-top: 12rpx;
+  margin-right: 12rpx;
+  float: left;
+  width: 32%;
+  height: 240rpx;
+}
+
+.finished-live-container .right {
+  float: left;
+  height: 264rpx;
+  width: 65%;
+  flex-flow: row nowrap;
+}
+
+.finished-live-container .text {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  height: 180rpx;
+}
+
+.finished-live-container .name {
+  display: block;
+  color: #333;
+  line-height: 40rpx;
+  font-size: 32rpx;
+}
+
+.finished-live-container .desc {
+  display: block;
+  color: #666;
+  line-height: 32rpx;
+  font-size: 25rpx;
+}
+
+.finished-live-container .price {
+  display: block;
+  color: #ab956d;
+  line-height: 50rpx;
+  font-size: 33rpx;
+}
+
+
+.live-container {
+  width: 750rpx;
+  height: 100%;
+  overflow: hidden;
+  padding: 20rpx;
+}
+
+.live-container .item {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 25rpx;
+}
+
+.live-container .img-container{
+  height: 420rpx;
+  position: relative;
+}
+
+.live-container .img {
+  width: 100%;
+  height: 420rpx;
+  background: #fff;
+  border-radius: 20rpx 20rpx 0rpx 0rpx;
+  position: absolute;
+}
+
+.live-container .label {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.3);
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  font-size: 40px;
+  background-size: 55rpx auto;
+  padding: 160rpx 0rpx;
+  border-radius: 20rpx 20rpx 0rpx 0rpx;
+}
+
+.live-container .bottom {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  box-shadow: 0px 2px  4px 1px #DDD;
+  border-radius: 0rpx 0rpx 20rpx 20rpx;
+}
+
+.live-container .text {
+  padding: 20rpx;
+  width: 100%;
+}
+
+.live-container .name {
+  width: 100%;
+  display: block;
+  color: #333;
+  line-height: 50rpx;
+  font-size: 32rpx;
+  overflow: hidden;
+}
+
+.live-container .capsule-tag {
+  float: right;
+  padding-right: 0rpx;
+  padding-top: 8rpx;
+}
+
+.live-container .zan-capsule + .zan-capsule {
+  margin-left: 10px;
+}
+
+.live-container .desc {
+  width: 100%;
+  display: block;
+  color: #666;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+
+.live-container .subscribe {
+  padding-top: 30rpx;
+}
+
+.noContent{
+  display: block;
+  line-height: 80rpx;
+  text-align: center;
+  margin-top: 100rpx;
+  font-size: 30rpx;
+  color: #666666;
+}
+
+.contact {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 96rpx;
+  right: 20rpx;
+  font-size: 20rpx;
+  box-sizing: border-box;
+  background: url("https://firefac-1259431066.picsh.myqcloud.com/5ufjlp0rw68jen3pctjha6kk6jl6v4x9.png") no-repeat center 21rpx;
+  background-size: 55rpx auto;
+}

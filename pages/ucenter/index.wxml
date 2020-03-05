@@ -1,0 +1,30 @@
+<wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
+
+<view class="container">
+  <view class="profile-info" bindtap="goLogin">
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    <view class="info">
+      <text class="name">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+
+  <view class='user_column'>
+    <view class='user_column_item' bindtap='goFeedback'>
+      <van-icon  class='user_column_item_image' name="records" size="45rpx" />
+      <view class='user_column_item_text'>意见反馈</view>
+    </view>
+    <view class='user_column_item'>
+      <contact-button style="opacity:0;position:absolute;" type="default-dark" session-from="weapp" size="27">
+      </contact-button>
+      <van-icon  class='user_column_item_image' name="service-o" size="45rpx" />
+      <view class='user_column_item_text'>联系客服</view>
+    </view>
+    <view class='user_column_item' bindtap='aboutUs'>
+      <van-icon  class='user_column_item_image' name="info-o" size="45rpx" />
+      <view class='user_column_item_text'>关于我们</view>
+    </view>
+  </view>
+
+  <view class="logout" wx:if="{{hasLogin}}" bindtap="exitLogin">退出登录</view>
+
+</view>

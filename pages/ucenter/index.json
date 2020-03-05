@@ -1,0 +1,14 @@
+{
+  "backgroundColor": "#f4f4f4",
+  "navigationBarTitleText": "个人中心",
+  "usingComponents": {
+    "van-cell": "../../lib/cell/index",
+    "van-cell-group": "../../lib/cell-group/index",
+    "van-tab": "../../lib/tab/index",
+    "van-tabs": "../../lib/tabs/index",
+    "van-card": "../../lib/card/index",
+    "van-button": "../../lib/button/index",
+    "van-tag": "../../lib/tag/index",
+    "van-icon": "../../lib/icon/index"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/livePlayer/livePlayer",
+    "pages/auth/login/login",
+    "pages/auth/accountLogin/accountLogin",
+    "pages/auth/register/register",
+    "pages/auth/reset/reset",
+    "pages/ucenter/index",
+    "pages/document/document",
+    "pages/about/about"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "费尔工坊官网",
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "custom": false,
+    "backgroundColor": "#fafafa",
+    "borderStyle": "white",
+    "selectedColor": "#AB956D",
+    "color": "#666",
+    "list": [
+      {
+        "pagePath": "pages/livePlayer/livePlayer",
+        "iconPath": "static/images/home.png",
+        "selectedIconPath": "static/images/home@selected.png",
+        "text": "直播"
+      },
+      {
+        "pagePath": "pages/document/document",
+        "iconPath": "static/images/category.png",
+        "selectedIconPath": "static/images/category@selected.png",
+        "text": "文档"
+      },
+      {
+        "pagePath": "pages/ucenter/index",
+        "iconPath": "static/images/my.png",
+        "selectedIconPath": "static/images/my@selected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wxc8d675b0d496a013",
+    "wx7bd6a190588dbb43",
+    "wx0c0db5ae90b1e008",
+    "wx8b4db834d5ce588e"
+  ],
+  "plugins": {
+    "live-player-plugin": {
+      "version": "1.0.0",
+      "provider": "wx2b03c6e691cd7370"
+    }
+  }
+
+}
