@@ -20,7 +20,7 @@
                 <navigator url="plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id={{item.roomid}}" class="header">
                   <text class="name">{{item.name}}</text>
                   <text wx:if="{{item.anchorName != ''}}" class="desc">主播：{{item.anchorName}}</text>
-                  <text class="desc">直播时间：{{dateUtil.dateFormat(item.startTime)}} - {{dateUtil.dateFormat(item.endTime)}}</text>
+                  <text class="desc">直播时间：{{dateUtil.dateFormat(item.startTime, 'MM月dd日hh:mm')}} - {{dateUtil.dateFormat(item.endTime, 'MM月dd日hh:mm')}}</text>
                 </navigator>
                 <view class="subscribe" wx:if="{{item.liveStatus == 102}}">
                   <subscribe room-id="{{item.roomid}}"></subscribe>

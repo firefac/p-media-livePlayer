@@ -33,7 +33,7 @@ Page({
     let that = this;
     return {
       title: "快来费尔工坊一起玩直播吧",
-      path: 'pages/tools/livePlayer/livePlayer'
+      path: 'pages/livePlayer/livePlayer'
     }
   },
   onPullDownRefresh() {
@@ -59,8 +59,8 @@ Page({
     util.request(api.LiveRoomList, {
         statusList: [101, 102, 105, 106],
         sort: "asc",
-        pageNum: this.pageNum,
-        pageSize: this.pageSize
+        pageNum: this.data.pageNum,
+        pageSize: this.data.pageSize
       }, "POST")
       .then(function(res) {
         if (res.errcode === '0') {
@@ -116,8 +116,8 @@ Page({
     let that = this;
     util.request(api.LiveRoomList, {
         statusList: [103, 104, 107],
-        pageNum: this.pageNum,
-        pageSize: this.pageSize
+        pageNum: this.data.finishedPageNum,
+        pageSize: this.data.finishedPageSize
       }, "POST")
       .then(function(res) {
         if (res.errcode === '0') {
@@ -127,7 +127,7 @@ Page({
           })
 
           if(res.data.list.length < that.data.finishedRoomsPageSize){
-            that.data.finishedRoomsLastPage = true
+            that.data.finishedLastPage = true
           }
         }
       });
@@ -156,10 +156,12 @@ Page({
         });
         return false;
       }else{
-        this.data.pageNum = this.data.pageNum + 1
+        this.setData({
+          pageNum: this.data.pageNum + 1
+        })
         this.getRoomsList();
       }
-    }else if(this.data.tabIndex == 0){
+    }else if(this.data.tabIndex == 1){
       if(this.data.finishedLastPage){
         wx.showToast({
           title: '没有更多内容了',
@@ -168,7 +170,9 @@ Page({
         });
         return false;
       }else{
-        this.data.finishedPageNum = this.data.finishedageNum + 1
+        this.setData({
+          finishedPageNum: this.data.finishedPageNum + 1
+        })
         this.getFinishedRoomsList();
       }
     }

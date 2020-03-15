@@ -9,7 +9,7 @@
 		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.3",
+	"libVersion": "2.10.2",
 	"appid": "wx283419ee2df7ee01",
 	"projectname": "firefac-liveplayer",
 	"simulatorType": "wechat",
