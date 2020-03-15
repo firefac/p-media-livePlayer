@@ -126,7 +126,7 @@ Page({
             finishedRooms: that.data.finishedRooms.concat(res.data.list)
           })
 
-          if(res.data.list.length < that.data.finishedRoomsPageSize){
+          if(res.data.list.length < that.data.finishedPageSize){
             that.data.finishedLastPage = true
           }
         }
