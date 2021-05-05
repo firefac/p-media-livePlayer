@@ -1,7 +1,7 @@
 <wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
 
 <view class="container">
-  <van-tabs bind:change="switchCate" active="{{tabIndex}}">
+  <van-tabs bind:change="switchCate" active="{{tabIndex}}" sticky="true" swipeable="true">
     <van-tab title="直播">
       <view class="noContent" wx:if="{{rooms.length == 0}}">
         <van-icon name="bullhorn-o" size="120rpx" />
@@ -33,7 +33,7 @@
     <van-tab title="已结束">
       <view class="finished-live-container">
         <view class="item" wx:for="{{finishedRooms}}" wx:for-index="index" wx:for-item="item" wx:key="id">
-            <image class="img" src="{{item.anchorImg}}" mode="aspectFit" background-size="cover"></image>
+            <image class="img" src="{{item.anchorImg}}" mode="aspectFill" background-size="cover"></image>
             <view class="right">
               <navigator url="plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id={{item.roomid}}">
                 <view class="text">

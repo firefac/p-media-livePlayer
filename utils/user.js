@@ -6,8 +6,8 @@ const api = require('../config/api.js');
 
 
 /**
- * Promise封装wx.checkSession
- */
+* Promise封装wx.checkSession
+*/
 function checkSession() {
   return new Promise(function(resolve, reject) {
     wx.checkSession({
@@ -22,8 +22,8 @@ function checkSession() {
 }
 
 /**
- * Promise封装wx.login
- */
+* Promise封装wx.login
+*/
 function login() {
   return new Promise(function(resolve, reject) {
     wx.login({
@@ -42,8 +42,8 @@ function login() {
 }
 
 /**
- * 调用微信登录
- */
+* 调用微信登录
+*/
 function loginByWeixin(userInfo) {
 
   return new Promise(function(resolve, reject) {
@@ -72,8 +72,8 @@ function loginByWeixin(userInfo) {
 }
 
 /**
- * 判断用户是否登录
- */
+* 判断用户是否登录
+*/
 function checkLogin() {
   return new Promise(function(resolve, reject) {
     if (wx.getStorageSync('userInfo') && wx.getStorageSync('token')) {
@@ -88,7 +88,35 @@ function checkLogin() {
   });
 }
 
+/**
+* 判断用户是否登录
+*/
+function checkLoginSync() {
+  if (wx.getStorageSync('userInfo') && wx.getStorageSync('token')) {
+    return true
+  } 
+  return false
+}
+/**
+* 判断用户是否是管理员
+*/
+function checkPermission() {
+  var userInfo = wx.getStorageSync('userInfo')
+
+  if(userInfo == null){
+    return false
+  }
+
+  if(userInfo.authType == 1){
+    return true
+  }
+
+  return false
+}
+
 module.exports = {
   loginByWeixin,
   checkLogin,
+  checkPermission,
+  checkLoginSync
 };
